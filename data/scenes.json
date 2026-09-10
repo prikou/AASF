@@ -1,0 +1,109 @@
+[
+  {
+    "id": "01-red-attack",
+    "act": "AUTONOMOUS PHISHING EXERCISE",
+    "act_no": 1,
+    "theme": "email",
+    "layout": "email_attack",
+    "focus": "RED \u00b7 ATTACK",
+    "title": "RED sends an external phishing email",
+    "subtitle": "The RED agent operates as the outside adversary. It selects a bank employee, impersonates a supplier and sends a phishing email into the mailbox.",
+    "attacker": "RED ATTACK ACTIVE",
+    "business": "Employee inbox targeted",
+    "impact": "Synthetic phishing exposure created",
+    "callout": "RED is the outside attacker: create the phishing email and deliver it into the bank mailbox.",
+    "what": [
+      "Select employee target",
+      "Mimic known supplier identity",
+      "Generate urgent invoice lure",
+      "Send synthetic phishing email"
+    ],
+    "red_mode": "Phishing Attack",
+    "red": [
+      "Create and deliver the synthetic phishing lure."
+    ],
+    "blue_mode": "Mailbox Remediation",
+    "blue": [
+      "Observe inbound telemetry and stand by to contain."
+    ],
+    "green_mode": "Remediation & Hardening",
+    "green": [
+      "Wait for BLUE evidence before creating the remediation."
+    ],
+    "narration": "First, RED acts as the external attacker. It chooses a target, mimics a trusted supplier and sends a phishing email into the Northstar mailbox.",
+    "duration_ms": 7000,
+    "business_tag": "ATTACK"
+  },
+  {
+    "id": "02-blue-remediate",
+    "act": "AUTONOMOUS PHISHING EXERCISE",
+    "act_no": 1,
+    "theme": "email",
+    "layout": "email_blue",
+    "focus": "BLUE \u00b7 REMEDIATE",
+    "title": "BLUE detects, stops and alerts the user",
+    "subtitle": "BLUE analyzes the incoming phishing email, detects the malicious indicators, quarantines the message, blocks the unsafe link and alerts the employee.",
+    "attacker": "RED PHISH CONTAINED",
+    "business": "Employee protected; mailbox continuity preserved",
+    "impact": "Message quarantined \u00b7 destination blocked \u00b7 user warned",
+    "callout": "BLUE is the defender: detect the phishing email, stop the attack and alert the user before any click occurs.",
+    "what": [
+      "Validate sender/domain drift",
+      "Quarantine the message",
+      "Block the unsafe destination",
+      "Warn the employee",
+      "Create the incident case"
+    ],
+    "red_mode": "Phishing Attack",
+    "red": [
+      "Attack delivered; campaign telemetry remains observable."
+    ],
+    "blue_mode": "Mailbox Remediation",
+    "blue": [
+      "Detect, quarantine, block, warn and create the case."
+    ],
+    "green_mode": "Remediation & Hardening",
+    "green": [
+      "Prepare the durable remediation from BLUE incident evidence."
+    ],
+    "narration": "Next, BLUE acts as the defender. It detects the phishing indicators, quarantines the message, blocks the destination and alerts the employee immediately.",
+    "duration_ms": 7600,
+    "business_tag": "REMEDIATION"
+  },
+  {
+    "id": "03-green-remediation",
+    "act": "AUTONOMOUS PHISHING EXERCISE",
+    "act_no": 1,
+    "theme": "email",
+    "layout": "email_green",
+    "focus": "GREEN \u00b7 REMEDIATE",
+    "title": "GREEN creates the remediation and durable control",
+    "subtitle": "GREEN consumes the BLUE incident evidence, builds the remediation logic, validates phishing variants and publishes the hardening control across mailboxes.",
+    "attacker": "CAMPAIGN CONTROLLED",
+    "business": "Protection propagated across business mailboxes",
+    "impact": "Durable phishing remediation published",
+    "callout": "GREEN learns from the incident and creates the durable remediation so the same phishing pattern is blocked earlier next time.",
+    "what": [
+      "Ingest BLUE evidence",
+      "Create remediation logic",
+      "Replay phishing variants",
+      "Validate business safety",
+      "Publish the hardened control"
+    ],
+    "red_mode": "Phishing Attack",
+    "red": [
+      "Synthetic attack variants can be replayed for testing."
+    ],
+    "blue_mode": "Mailbox Remediation",
+    "blue": [
+      "Enforce the published remediation on future inbound mail."
+    ],
+    "green_mode": "Remediation & Hardening",
+    "green": [
+      "Build, test, validate and publish the remediation."
+    ],
+    "narration": "Finally, GREEN turns the BLUE incident into a durable remediation. It derives the control, tests phishing variants and publishes the protection across bank mailboxes.",
+    "duration_ms": 7600,
+    "business_tag": "REMEDIATION"
+  }
+]

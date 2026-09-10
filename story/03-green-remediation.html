@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AASF · Autonomous Phishing Exercise</title>
+<meta name="description" content="AASF Email Defense — a three-act autonomous phishing exercise: RED attacks from outside, BLUE detects and contains, GREEN publishes the durable remediation.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%231B3A5C'/%3E%3Cpath d='M16 6l8 3.4v6.1c0 4.7-3.2 8.6-8 10.5-4.8-1.9-8-5.8-8-10.5V9.4L16 6z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../shared/styles.css">
+</head>
+<body data-scene="03-green-remediation">
+
+<div class="ambient" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- chapter curtain -->
+<div id="chapterCurtain" class="curtain hidden" role="presentation">
+  <div class="curtain-inner">
+    <div id="curtainNo" class="curtain-no num">01</div>
+    <div>
+      <p id="curtainAct" class="eyebrow"></p>
+      <h1 id="curtainTitle"></h1>
+      <p id="curtainSub"></p>
+      <div class="curtain-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- ============ masthead ============ -->
+  <header class="masthead">
+    <a class="brand" href="01-red-attack.html" aria-label="AASF home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+          <path d="M12 3l8 3.2v5.6c0 4.4-3.2 8-8 9.6-4.8-1.6-8-5.2-8-9.6V6.2L12 3z"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <b>AASF</b>
+        <small>Autonomous AI Security Fabric</small>
+      </span>
+    </a>
+
+    <nav id="actNav" class="act-nav" aria-label="Exercise acts"></nav>
+
+    <div class="mast-right">
+      <div class="meter">
+        <div class="meter-id">
+          <span class="pulse" aria-hidden="true"></span>
+          <span class="micro" id="incidentId">INCIDENT</span>
+        </div>
+        <b class="num" id="incidentClock">T+ 00:00</b>
+      </div>
+
+      <div class="switches">
+        <button id="narrationBtn" class="switch" type="button" aria-pressed="true">
+          <em aria-hidden="true"></em><span>Narration</span>
+        </button>
+        <button id="autoplayBtn" class="switch" type="button" aria-pressed="false">
+          <em aria-hidden="true"></em><span>Auto</span>
+        </button>
+        <button id="replayBtn" class="switch" type="button" title="Replay narration (R)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px">
+            <path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="stepper">
+        <a id="topPrev" class="step-btn" aria-label="Previous act">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        </a>
+        <a id="topNext" class="step-btn primary" aria-label="Next act">
+          <span>Next</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ stage ============ -->
+  <main class="stage">
+
+    <aside class="act-col">
+      <div class="act-head">
+        <div class="rule short reveal r1"></div>
+        <p id="actLabel" class="eyebrow reveal r1" style="margin-top:12px"></p>
+        <h1 id="title" class="reveal r2"></h1>
+        <p id="subtitle" class="reveal r3"></p>
+      </div>
+
+      <div class="rule reveal r3"></div>
+
+      <div class="impact-block reveal r4">
+        <span id="businessTag" class="tag"></span>
+        <h2 id="business"></h2>
+        <p id="impact"></p>
+      </div>
+
+      <div id="posture" class="posture reveal r5"></div>
+    </aside>
+
+    <div class="canvas-tray reveal r2">
+      <div class="tray-head">
+        <span id="focusBadge" class="chip"><em aria-hidden="true"></em><span></span></span>
+        <p id="callout"></p>
+      </div>
+
+      <section id="visual" class="canvas" aria-label="Live scene"></section>
+
+      <div class="tray-foot">
+        <div class="foot-stat accent">
+          <span class="micro">Red attack state</span>
+          <b id="attacker"></b>
+        </div>
+        <div class="foot-stat">
+          <span class="micro">Red objective</span>
+          <b id="attackerObjective"></b>
+        </div>
+        <div class="foot-stat">
+          <span class="micro">Current action</span>
+          <b id="focus"></b>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============ telemetry deck ============ -->
+  <footer class="deck">
+    <div class="cell stream">
+      <div class="cell-head">
+        <span class="pulse" aria-hidden="true"></span>
+        <span class="micro">Event stream</span>
+      </div>
+      <div id="liveEvent" class="stream-stack" role="status" aria-live="polite">
+        <div class="stream-line"><time>--:--:--.---</time><b>standby</b><span>waiting for first event</span></div>
+      </div>
+    </div>
+
+    <div class="cell counters">
+      <span class="micro">Incident counters</span>
+      <div id="counters" class="counter-row"></div>
+    </div>
+
+    <div class="cell beat">
+      <span class="micro">System heartbeat</span>
+      <div id="heartbeatList"></div>
+    </div>
+
+    <div class="cell chain">
+      <div class="chain-row">
+        <span class="micro">Handoff</span>
+        <b id="handoff">—</b>
+      </div>
+      <div id="executionReceipt" class="receipt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Pending</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="../shared/story.js"></script>
+</body>
+</html>

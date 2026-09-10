@@ -1,0 +1,38 @@
+[
+  {
+    "id": "intro-1",
+    "chapter": "TARGETING",
+    "duration_ms": 17000,
+    "narration": "Mass phishing is becoming micro-targeting. An attacker agent builds a synthetic profile of one person from public and compromised context — who they work with, which vendors they expect, what invoices are outstanding — and writes a different lure for every recipient. There is no shared template left to fingerprint."
+  },
+  {
+    "id": "intro-2",
+    "chapter": "CONVERSATION",
+    "duration_ms": 18000,
+    "narration": "And it no longer arrives as a single email with a link. The agent holds a thread over hours or days. It answers questions, adjusts its tone, supplies documents, and builds trust before it asks for anything. Email is only the entry point — a Teams message, a voice note, a meeting invitation or a generated executive video can reinforce the same story."
+  },
+  {
+    "id": "intro-3",
+    "chapter": "AGENT VS AGENT",
+    "duration_ms": 17500,
+    "narration": "Here is the part most organisations are least ready for. The message may not be written for the employee at all. It may be written for their assistant — instructions embedded in the text, aimed at the agent that summarises the mailbox, processes the invoice, or calls a tool. The human never has to be deceived."
+  },
+  {
+    "id": "intro-4",
+    "chapter": "ADAPTATION",
+    "duration_ms": 18500,
+    "narration": "An attacker agent optimises for the business objective, not the click. Block the link, and it switches to a reply-based request. Block attachments, and it moves to a legitimate cloud document. If the employee refuses, it targets someone else in the same workflow. It observes what was delivered, quarantined or challenged, and modifies the next attempt. Phishing stops being a campaign and becomes an adaptive system."
+  },
+  {
+    "id": "intro-5",
+    "chapter": "RESPONSE",
+    "duration_ms": 16000,
+    "narration": "An adaptive attacker at machine speed cannot be met at human speed. So the defence runs as agents too. RED proves the attack. BLUE detects the intent and contains it before any click. GREEN turns that one incident into a durable control that holds against the variants that follow."
+  },
+  {
+    "id": "intro-6",
+    "chapter": "CLOSE",
+    "duration_ms": 8500,
+    "narration": "Attack. Defence. Hardening. With no human in the loop — and a fix that outlives the incident."
+  }
+]
